@@ -1,0 +1,28 @@
+form {
+    input {
+        padding: space(s) space(p);
+        background-color: lighten($color: color(primary, darker), $amount: 15);
+        color: color(primary, lighter);
+        border: none;
+
+        &::placeholder {
+            color: color(primary, lighter);
+
+            &:focus,
+            &:hover,
+            &:active,
+            &:-internal-autofill-selected  {
+                background-color: color(primary, lighter) !important;
+                color: color(primary, darker) !important;
+            }
+        }
+
+        &:focus,
+        &:hover,
+        &:active,
+        &:-internal-autofill-selected  {
+            background-color: color(primary, lighter) !important;
+            color: color(primary, darker) !important;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+a,
+[type="submit"],
+button{
+	&.btn {
+		@include font(medium);
+
+		padding: space(p) space(m);
+		border: none;
+		border-radius: 0;
+
+		// &.btn-primary {
+		// 	background-color: color(primary, darker);
+
+		// 	&:hover,
+		// 	&:active,
+		// 	&:focus {
+		// 		background-color: lighten($color: color(primary, darker), $amount: 30);
+		// 	}
+		// }
+
+		// &.btn-primary-inverted {
+		// 	background-color: lighten($color: color(primary, darker), $amount: 30);
+
+		// 	&:hover,
+		// 	&:active,
+		// 	&:focus {
+		// 		background-color: color(primary, darker);
+		// 	}
+		// }
+
+		// &.btn-white {
+		// 	background-color: color(light);
+		// 	color: color(dark);
+
+		// 	&:hover,
+		// 	&:active,
+		// 	&:focus {
+		// 		background-color: lighten($color: color(primary, darker), $amount: 30);
+		// 	}
+
+			
+		// 	&.btn-transparent {
+		// 		background-color: transparent;
+		// 		color: color(light);
+
+		// 		border: 2px solid color(light);
+
+		// 		&:hover,
+		// 		&:active,
+		// 		&:focus {
+		// 			background-color: color(light);
+		// 			color: color(dark);
+		// 		}
+		// 	}
+		// }
+
+		// &:hover,
+		// &:active,
+		// &:focus {
+		// 	&.animate {
+		// 		transition-duration: .3s;
+    	// 		transition-property: transform;
+
+		// 		&.rotate-left {
+		// 			transform: scale(1.1) rotate(4deg)
+		// 		}
+		// 	}
+		// }
+	}
+}
