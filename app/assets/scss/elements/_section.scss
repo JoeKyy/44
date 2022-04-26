@@ -1,2 +1,121 @@
-section {  
+section {
+    min-height: calc(100vh);
+
+    &.header-highlight {
+        position: relative;
+
+        width: 100%;
+        padding-bottom: 169px;
+
+        background: color(primary, darken);
+        background: -moz-linear-gradient(left,  color(primary) 50%, color(primary, darken) 50%);
+        background: -webkit-linear-gradient(left,  color(primary) 50%,color(primary, darken) 50%);
+        background: linear-gradient(to right,  color(primary) 50%,color(primary, darken) 50%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1);
+
+        border-bottom: 25px solid color(tertiary);
+
+        &:before {
+            @include generated-content(950px, 799px);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            margin: auto auto 0;
+
+            background: url(../images/img-candidato.png);
+        }
+    }
+
+    &.video {
+        position: relative;
+        background: color(primary) top right url(../images/bg-triangles.png) no-repeat;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            margin: auto;
+        }
+    }
+
+    &.lead {
+        padding: space(xg) 0;
+        min-height: inherit;
+
+        background: color(secondary);
+        color: color(dark);
+
+        img {
+            position: relative;
+            top: -130px;
+        }
+
+        .text {
+            padding-top: space(xg);
+        }
+
+        p {
+            margin: space(xg) 0;
+            font-size: font-size(xbig);
+
+            a {
+                @include font(bold);
+
+                display: inline;
+                padding: space(p) space(m);
+
+                font-style: italic;
+                letter-spacing: inherit;
+
+            }
+        }
+    }
+
+    &.action-button {
+        position: relative;
+        background: top center url(../images/img-pernambuco.png);
+        background-size: cover;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        a {
+            display: inline-flex;
+            align-self: center;
+
+            font-size: font-size(big);
+        }
+    }
+
+    &.footer-border {
+        position: relative;
+
+        width: 100%;
+        min-height: 169px;
+        padding-bottom: 169px;
+
+        background: color(primary, darken);
+        background: -moz-linear-gradient(left,  color(primary) 50%, color(primary, darken) 50%);
+        background: -webkit-linear-gradient(left,  color(primary) 50%,color(primary, darken) 50%);
+        background: linear-gradient(to right,  color(primary) 50%,color(primary, darken) 50%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1);
+
+        &:before {
+            @include generated-content(100%, 169px);
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            background: -13% 0 repeat-x url(../images/bg-rectangle.png);
+        }
+    }
 }

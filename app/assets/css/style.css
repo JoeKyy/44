@@ -154,9 +154,44 @@ a.btn,
 button.btn {
   font-family: "Roboto";
   font-weight: 500;
-  padding: 8px 24px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 24px 56px;
   border: none;
-  border-radius: 0; }
+  border-radius: 30px;
+  font-size: 1.125rem;
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase; }
+  a.btn.btn-red,
+  [type="submit"].btn.btn-red,
+  button.btn.btn-red {
+    background-color: #ef3f3e;
+    color: #ffffff; }
+    a.btn.btn-red:hover, a.btn.btn-red:active, a.btn.btn-red:focus,
+    [type="submit"].btn.btn-red:hover,
+    [type="submit"].btn.btn-red:active,
+    [type="submit"].btn.btn-red:focus,
+    button.btn.btn-red:hover,
+    button.btn.btn-red:active,
+    button.btn.btn-red:focus {
+      background-color: #fbcccb;
+      color: #ef3f3e; }
+  a.btn.btn-blue,
+  [type="submit"].btn.btn-blue,
+  button.btn.btn-blue {
+    background-color: #3838bc;
+    color: #ffffff; }
+    a.btn.btn-blue:hover, a.btn.btn-blue:active, a.btn.btn-blue:focus,
+    [type="submit"].btn.btn-blue:hover,
+    [type="submit"].btn.btn-blue:active,
+    [type="submit"].btn.btn-blue:focus,
+    button.btn.btn-blue:hover,
+    button.btn.btn-blue:active,
+    button.btn.btn-blue:focus {
+      background-color: #a8a8e5;
+      color: #ffffff; }
 
 /*------------------------------------*\
     HEADER
@@ -195,6 +230,91 @@ body {
 /*------------------------------------*\
     SECTION
 \*------------------------------------*/
+section {
+  min-height: calc(100vh); }
+  section.header-highlight {
+    position: relative;
+    width: 100%;
+    padding-bottom: 169px;
+    background: #3838bc;
+    background: -moz-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
+    background: -webkit-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
+    background: linear-gradient(to right, #00b1eb 50%, #3838bc 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1);
+    border-bottom: 25px solid #8fbf3e; }
+    section.header-highlight:before {
+      display: inline-block;
+      width: 950px;
+      height: 799px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto auto 0;
+      background: url(../images/img-candidato.png); }
+  section.video {
+    position: relative;
+    background: #00b1eb top right url(../images/bg-triangles.png) no-repeat; }
+    section.video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+  section.lead {
+    padding: 56px 0;
+    min-height: inherit;
+    background: #f1c930;
+    color: #3a3a3a; }
+    section.lead img {
+      position: relative;
+      top: -130px; }
+    section.lead .text {
+      padding-top: 56px; }
+    section.lead p {
+      margin: 56px 0;
+      font-size: 2rem; }
+      section.lead p a {
+        font-family: "Roboto";
+        font-weight: 700;
+        display: inline;
+        padding: 8px 24px;
+        font-style: italic;
+        letter-spacing: inherit; }
+  section.action-button {
+    position: relative;
+    background: top center url(../images/img-pernambuco.png);
+    background-size: cover;
+    display: flex;
+    align-content: center;
+    justify-content: center; }
+    section.action-button a {
+      display: inline-flex;
+      align-self: center;
+      font-size: 1.5rem; }
+  section.footer-border {
+    position: relative;
+    width: 100%;
+    min-height: 169px;
+    padding-bottom: 169px;
+    background: #3838bc;
+    background: -moz-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
+    background: -webkit-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
+    background: linear-gradient(to right, #00b1eb 50%, #3838bc 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1); }
+    section.footer-border:before {
+      display: inline-block;
+      width: 100%;
+      height: 169px;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: -13% 0 repeat-x url(../images/bg-rectangle.png); }
+
 /*------------------------------------*\
     FOOTER
 \*------------------------------------*/

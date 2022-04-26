@@ -12,6 +12,9 @@ $colors: (
   secondary: (
     base: #f1c930,
   ),
+  tertiary: (
+    base: #8fbf3e,
+  ),
   light: (
     darker: #fafafa,
     base: #ffffff,
@@ -23,8 +26,8 @@ $colors: (
     lighten: #f6f6f6,
   ),
   danger      : #ef3f3e,
-  success     : #00b412,
-  warning     : #fed82b,
+  success     : #8fbf3e,
+  warning     : #f1c930,
 
 ) !default;
 

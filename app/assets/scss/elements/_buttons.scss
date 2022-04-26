@@ -4,19 +4,42 @@ button{
 	&.btn {
 		@include font(medium);
 
-		padding: space(p) space(m);
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		padding: space(m) space(xg);
+
 		border: none;
-		border-radius: 0;
+		border-radius: 30px; 
 
-		// &.btn-primary {
-		// 	background-color: color(primary, darker);
+		font-size: font-size(large);
+		letter-spacing: 5px;
+		text-align: center;
+		text-transform: uppercase;
 
-		// 	&:hover,
-		// 	&:active,
-		// 	&:focus {
-		// 		background-color: lighten($color: color(primary, darker), $amount: 30);
-		// 	}
-		// }
+		&.btn-red {
+			background-color: color(danger);
+			color: color(light);
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: lighten($color: color(danger), $amount: 30);
+				color: color(danger);
+			}
+		}
+
+		&.btn-blue {
+			background-color: color(primary, darken);
+			color: color(light);
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: lighten($color: color(primary, darken), $amount: 30);
+				color: color(light);
+			}
+		}
 
 		// &.btn-primary-inverted {
 		// 	background-color: lighten($color: color(primary, darker), $amount: 30);
