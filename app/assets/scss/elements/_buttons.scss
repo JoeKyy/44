@@ -4,13 +4,10 @@ button{
 	&.btn {
 		@include font(medium);
 
-		display: flex;
-		align-content: center;
-		justify-content: center;
 		padding: space(m) space(xg);
 
 		border: none;
-		border-radius: 30px; 
+		border-radius: 30px;
 
 		font-size: font-size(large);
 		letter-spacing: 5px;
@@ -61,7 +58,7 @@ button{
 		// 		background-color: lighten($color: color(primary, darker), $amount: 30);
 		// 	}
 
-			
+
 		// 	&.btn-transparent {
 		// 		background-color: transparent;
 		// 		color: color(light);

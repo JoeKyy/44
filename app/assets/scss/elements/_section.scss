@@ -1,11 +1,10 @@
 section {
-    min-height: calc(100vh);
+    min-height: 100vh;
 
     &.header-highlight {
         position: relative;
 
         width: 100%;
-        padding-bottom: 169px;
 
         background: color(primary, darken);
         background: -moz-linear-gradient(left,  color(primary) 50%, color(primary, darken) 50%);
@@ -27,6 +26,46 @@ section {
             margin: auto auto 0;
 
             background: url(../images/img-candidato.png);
+        }
+
+        .header-highlightContent {
+            min-height: 100vh;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            margin: auto;
+            width: 100%;
+
+            &#svg-hashtag {
+                max-width: 485px;
+                margin-left: -200px;
+            }
+            &#svg-partido {
+                max-width: 305px;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.form {
+        h2 {
+            @include font(bold);
+
+            margin-bottom: space(base);
+
+            font-size: font-size(xxxbig);
+            color: color(primary);
+        }
+
+        p {
+            @include font(medium);
+            font-size: font-size(big);
         }
     }
 

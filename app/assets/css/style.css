@@ -138,25 +138,43 @@ strong {
 /*------------------------------------*\
     FORM
 \*------------------------------------*/
-form input {
-  padding: 4px 8px;
-  background-color: #3838bb;
-  border: none; }
-  form input::placeholder:focus, form input::placeholder:hover, form input::placeholder:active, form input::placeholder:-internal-autofill-selected {
-    background-color: !important;
-    color: #262680 !important; }
-  form input:focus, form input:hover, form input:active, form input:-internal-autofill-selected {
-    background-color: !important;
-    color: #262680 !important; }
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 8px 0;
+  padding: 16px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  border: 1px solid;
+  color: #9fa3a7; }
+  form input::placeholder,
+  form textarea::placeholder {
+    color: #9fa3a7; }
+    form input::placeholder:focus, form input::placeholder:hover, form input::placeholder:active, form input::placeholder:-internal-autofill-selected,
+    form textarea::placeholder:focus,
+    form textarea::placeholder:hover,
+    form textarea::placeholder:active,
+    form textarea::placeholder:-internal-autofill-selected {
+      background-color: #fafafa !important;
+      color: #9fa3a7; }
+  form input:focus, form input:hover, form input:active, form input:-internal-autofill-selected,
+  form textarea:focus,
+  form textarea:hover,
+  form textarea:active,
+  form textarea:-internal-autofill-selected {
+    background-color: #fafafa !important;
+    color: #9fa3a7; }
+
+form textarea {
+  height: inherit; }
 
 a.btn,
 [type="submit"].btn,
 button.btn {
   font-family: "Roboto";
   font-weight: 500;
-  display: flex;
-  align-content: center;
-  justify-content: center;
   padding: 24px 56px;
   border: none;
   border-radius: 30px;
@@ -231,11 +249,10 @@ body {
     SECTION
 \*------------------------------------*/
 section {
-  min-height: calc(100vh); }
+  min-height: 100vh; }
   section.header-highlight {
     position: relative;
     width: 100%;
-    padding-bottom: 169px;
     background: #3838bc;
     background: -moz-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
     background: -webkit-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
@@ -254,6 +271,32 @@ section {
       bottom: 0;
       margin: auto auto 0;
       background: url(../images/img-candidato.png); }
+    section.header-highlight .header-highlightContent {
+      min-height: 100vh; }
+    section.header-highlight svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%; }
+      section.header-highlight svg#svg-hashtag {
+        max-width: 485px;
+        margin-left: -200px; }
+      section.header-highlight svg#svg-partido {
+        max-width: 305px;
+        margin-right: 0; }
+  section.form h2 {
+    font-family: "Roboto";
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 3rem;
+    color: #00b1eb; }
+  section.form p {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1.5rem; }
   section.video {
     position: relative;
     background: #00b1eb top right url(../images/bg-triangles.png) no-repeat; }
