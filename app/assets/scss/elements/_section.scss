@@ -54,6 +54,8 @@ section {
     }
 
     &.form {
+        padding: space(gg) 0;
+
         h2 {
             @include font(bold);
 

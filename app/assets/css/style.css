@@ -287,16 +287,18 @@ section {
       section.header-highlight svg#svg-partido {
         max-width: 305px;
         margin-right: 0; }
-  section.form h2 {
-    font-family: "Roboto";
-    font-weight: 700;
-    margin-bottom: 16px;
-    font-size: 3rem;
-    color: #00b1eb; }
-  section.form p {
-    font-family: "Roboto";
-    font-weight: 500;
-    font-size: 1.5rem; }
+  section.form {
+    padding: 48px 0; }
+    section.form h2 {
+      font-family: "Roboto";
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 3rem;
+      color: #00b1eb; }
+    section.form p {
+      font-family: "Roboto";
+      font-weight: 500;
+      font-size: 1.5rem; }
   section.video {
     position: relative;
     background: #00b1eb top right url(../images/bg-triangles.png) no-repeat; }
