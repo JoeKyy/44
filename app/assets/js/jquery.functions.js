@@ -14,23 +14,25 @@ $(function () {
 	})
 
 	function showLoadingIndicator () {
-	form.classList.add('is-hidden')
-	loading.classList.remove('is-hidden')
+		form.classList.add('is-hidden')
+		loading.classList.remove('is-hidden')
 	}
 
 	function showSuccessMessage (response) {
-	console.log('Success!', response)
-	setTimeout(() => {
-		successMessage.classList.remove('is-hidden')
-		loading.classList.add('is-hidden')
-	}, 500)
+		console.log('Success!', response)
+		setTimeout(() => {
+			successMessage.classList.remove('is-hidden')
+			loading.classList.add('is-hidden')
+		}, 500)
 	}
 
 	function showErrorMessage (error) {
-	console.error('Error!', error.message)
-	setTimeout(() => {
-		errorMessage.classList.remove('is-hidden')
-		loading.classList.add('is-hidden')
-	}, 500)
+		console.error('Error!', error.message)
+		setTimeout(() => {
+			errorMessage.classList.remove('is-hidden')
+			loading.classList.add('is-hidden')
+		}, 500)
 	}
+
+	$('input[type="tel"]').inputmask({"mask": "(99) 99999-9999"});
 });

@@ -288,7 +288,7 @@ section {
           margin: auto auto 0;
           background: no-repeat center url(../images/img-candidato.png); } }
     section.header-highlight .header-highlightContent {
-      min-height: 100vh; }
+      min-height: 90vh; }
     section.header-highlight svg {
       position: absolute;
       top: 0;
