@@ -1,54 +1,36 @@
 $(function () {
-    $('.highlight').slick({
-		dots: true,
-		arrows: true,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-		responsive: [
-			{
-			  breakpoint: 1024,
-			  settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			  }
-			},
-			{
-			  breakpoint: 480,
-			  settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			  }
-			}
-		  ]
-	});
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxyvNek1YC1fU1WNkQFGV3-zeVpK1eYkI6mbBe48fQTF_fUJmyzCd_BaySuzmJSeqxV/exec'
+	const form = document.forms['submit-to-google-sheet']
+	const loading = document.querySelector('.js-loading')
+	const successMessage = document.querySelector('.js-success-message')
+	const errorMessage = document.querySelector('.js-error-message')
 
-    $(".highlight").on("afterChange", function (){
-        $('.highlight figure img').removeClass('animated grow');
-        $('.highlight figure figcaption').removeClass('animated fadeInUp');
-		$('.highlight .slick-active img').addClass('animated grow');
-        $('.highlight .slick-active figcaption').addClass('animated fadeInUp');
-    });
+	form.addEventListener('submit', e => {
+	e.preventDefault()
+	showLoadingIndicator()
+	fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => showSuccessMessage(response))
+		.catch(error => showErrorMessage(error))
+	})
 
-    $(".highlight").on("beforeChange", function (){
-        $('.highlight figure img').removeClass('animated grow');
-        $('.highlight figure figcaption').removeClass('animated fadeInUp');
-		$('.highlight .slick-active img').addClass('animated grow');
-        $('.highlight .slick-active figcaption').addClass('animated fadeInUp');
-    });
+	function showLoadingIndicator () {
+	form.classList.add('is-hidden')
+	loading.classList.remove('is-hidden')
+	}
 
-	$('.nav-button').click(function(){
-		if (!$(this).hasClass('is-active')) {
-			$(this).addClass('is-active');
-			$('body > header nav').addClass('nav-menu--open');
-			$('body > header nav').removeClass('nav-menu--close');
-		} else {
-			$(this).removeClass('is-active');
-			$('body > header nav').removeClass('nav-menu--open');
-			$('body > header nav').addClass('nav-menu--close');
-		}
-	});
+	function showSuccessMessage (response) {
+	console.log('Success!', response)
+	setTimeout(() => {
+		successMessage.classList.remove('is-hidden')
+		loading.classList.add('is-hidden')
+	}, 500)
+	}
+
+	function showErrorMessage (error) {
+	console.error('Error!', error.message)
+	setTimeout(() => {
+		errorMessage.classList.remove('is-hidden')
+		loading.classList.add('is-hidden')
+	}, 500)
+	}
 });
