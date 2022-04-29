@@ -6,16 +6,35 @@ section {
 
         width: 100%;
 
+        @include responsive(large) {
+            background: color(primary, darken);
+            background: -moz-linear-gradient(left,  color(primary) 50%, color(primary, darken) 50%);
+            background: -webkit-linear-gradient(left,  color(primary) 50%,color(primary, darken) 50%);
+            background: linear-gradient(to right,  color(primary) 50%,color(primary, darken) 50%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1);
+        }
+
         background: color(primary, darken);
-        background: -moz-linear-gradient(left,  color(primary) 50%, color(primary, darken) 50%);
-        background: -webkit-linear-gradient(left,  color(primary) 50%,color(primary, darken) 50%);
-        background: linear-gradient(to right,  color(primary) 50%,color(primary, darken) 50%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b1eb', endColorstr='#262680',GradientType=1);
+
 
         border-bottom: 25px solid color(tertiary);
 
         &:before {
-            @include generated-content(950px, 799px);
+            @include responsive(medium) {
+                @include generated-content(950px, 799px);
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                margin: auto auto 0;
+
+                background: no-repeat center url(../images/img-candidato.png);
+            }
+
+            @include generated-content(125vw, 88vh);
 
             position: absolute;
             top: 0;
@@ -23,9 +42,8 @@ section {
             right: 0;
             bottom: 0;
 
-            margin: auto auto 0;
-
-            background: url(../images/img-candidato.png);
+            margin: auto auto 0 -41px;
+            background: no-repeat top left url(../images/img-candidato.png);
         }
 
         .header-highlightContent {
@@ -42,13 +60,23 @@ section {
             margin: auto;
             width: 100%;
 
+
             &#svg-hashtag {
-                max-width: 485px;
-                margin-left: -200px;
+                @include responsive(large) {
+                    margin: auto auto auto -200px;
+                    max-width: 485px;
+                }
+
+                max-width: 29%;
+                margin: auto auto 35vh 2vw;
             }
             &#svg-partido {
-                max-width: 305px;
-                margin-right: 0;
+                @include responsive(large) {
+                    margin: auto 0 auto auto;
+                }
+
+                max-width: 24%;
+                margin: auto auto 15vh 5vw;
             }
         }
     }
@@ -69,6 +97,55 @@ section {
             @include font(medium);
             font-size: font-size(big);
         }
+
+        .loading {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+        }
+
+        .loading-spinner svg {
+            position: relative;
+            animation: rotate 2s linear infinite;
+            height: 50px;
+            width: 50px;
+        }
+
+        .loading-spinner circle {
+            stroke: color(dark);
+            stroke-dasharray: 1,200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: dash 1.5s ease-in-out infinite;
+        }
+
+        .js-success-message {
+            color: color(success);
+        }
+        .js-error-message {
+            color: color(danger);
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes dash {
+            0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+            100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+        }
     }
 
     &.video {
@@ -76,6 +153,10 @@ section {
         background: color(primary) top right url(../images/bg-triangles.png) no-repeat;
 
         iframe {
+            @include responsive(large) {
+                width: 1200px;
+            }
+
             position: absolute;
             top: 0;
             left: 0;
@@ -83,6 +164,7 @@ section {
             bottom: 0;
 
             margin: auto;
+            width: 80%;
         }
     }
 
@@ -99,7 +181,13 @@ section {
         }
 
         .text {
-            padding-top: space(xg);
+            @include responsive(large) {
+                padding-top: space(xg);
+                margin-top: inherit;
+            }
+
+            margin-top: -100px;
+
         }
 
         p {
