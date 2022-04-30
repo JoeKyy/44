@@ -252,11 +252,14 @@ section {
   min-height: 100vh; }
   section.header-highlight {
     position: relative;
+    overflow: hidden;
     width: 100%;
+    min-height: 60vh;
     background: #3838bc;
     border-bottom: 25px solid #8fbf3e; }
     @media (min-width: 79.9375em) {
       section.header-highlight {
+        min-height: 100vh;
         background: #3838bc;
         background: -moz-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
         background: -webkit-linear-gradient(left, #00b1eb 50%, #3838bc 50%);
@@ -272,7 +275,7 @@ section {
       left: 0;
       right: 0;
       bottom: 0;
-      margin: auto auto 0 -41px;
+      margin: auto auto -150px -80px;
       background: no-repeat top left url(../images/img-candidato.png); }
       @media (min-width: 48.0625em) {
         section.header-highlight:before {
@@ -288,7 +291,10 @@ section {
           margin: auto auto 0;
           background: no-repeat center url(../images/img-candidato.png); } }
     section.header-highlight .header-highlightContent {
-      min-height: 90vh; }
+      min-height: 60vh; }
+      @media (min-width: 79.9375em) {
+        section.header-highlight .header-highlightContent {
+          min-height: 90vh; } }
     section.header-highlight svg {
       position: absolute;
       top: 0;
