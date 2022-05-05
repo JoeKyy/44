@@ -37,4 +37,9 @@ form {
     textarea {
         height: inherit;
     }
+
+    label {
+        display: inline-block;
+        white-space: inherit;
+    }
 }

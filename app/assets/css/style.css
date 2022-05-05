@@ -132,9 +132,6 @@ strong {
   font-family: "Roboto";
   font-weight: 700; }
 
-::selection {
-  background-color: #262680; }
-
 /*------------------------------------*\
     FORM
 \*------------------------------------*/
@@ -169,6 +166,10 @@ form textarea {
 
 form textarea {
   height: inherit; }
+
+form label {
+  display: inline-block;
+  white-space: inherit; }
 
 a.btn,
 [type="submit"].btn,
